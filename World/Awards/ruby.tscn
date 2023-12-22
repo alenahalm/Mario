@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpwb2eqaaget8"]
+
+[ext_resource type="Texture2D" uid="uid://crllspdutfaxe" path="res://assets/Build/Awards/ruby.png" id="1_rahle"]
+
+[sub_resource type="GDScript" id="GDScript_0jtrt"]
+script/source = "extends AnimatableBody2D
+
+var counter = 0
+var cur_pos
+var index = 0
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	cur_pos = self.position.y
+	if self.name.substr(4) == \"\":
+		index = 0
+	else:
+		index = int(self.name.substr(4))
+	if Global.coins_x[index] + Global.coins_y[index] != 0:
+		self.global_position.x = Global.coins_x[index]
+		self.global_position.y = Global.coins_y[index]
+		self.counter = Global.coins_counter[index]
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	
+	if Global.pause:
+		return
+	
+	Global.coins_x[index] = self.global_position.x
+	Global.coins_y[index] = self.global_position.y
+	Global.coins_counter[index] = counter
+	
+	if counter == 1:
+		if cur_pos - self.position.y < 70: 
+			self.position.y -= 10
+
+func _on_player_detection_body_entered(body):
+	if body.name == \"Player\":
+		counter += 1
+		if counter == 2:
+			body.score += 100
+			body.coins += 1
+			Global.coins_x[index] = -100
+			Global.coins_y[index] = -100
+			self.queue_free()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jw56c"]
+radius = 27.1662
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk0v6"]
+size = Vector2(69, 63)
+
+[node name="Ruby" type="AnimatableBody2D"]
+script = SubResource("GDScript_0jtrt")
+
+[node name="Ruby" type="Sprite2D" parent="."]
+texture = ExtResource("1_rahle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jw56c")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_mk0v6")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]

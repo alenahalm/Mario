@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://b60y7fimqc5uh"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_214s7"]
+[ext_resource type="Texture2D" uid="uid://d2u6e5hxhidpc" path="res://assets/background.png" id="1_a2myf"]
+[ext_resource type="FontFile" uid="uid://di3v2lrw62x7d" path="res://assets/Font/ofont.ru_Avatar.ttf" id="2_lybql"]
+[ext_resource type="Script" path="res://Label2.gd" id="3_45uv3"]
+[ext_resource type="Texture2D" uid="uid://dak2m4aedewsy" path="res://assets/Build/decoration/pause_record.png" id="3_svfek"]
+[ext_resource type="Texture2D" uid="uid://ca733a4mssfvu" path="res://assets/Build/Bricks/brick.png" id="4_7a2fi"]
+[ext_resource type="Texture2D" uid="uid://dcur5fsd4akvg" path="res://assets/Player/Idle/none1.png" id="5_6b5kl"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_214s7")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(961.25, 537)
+scale = Vector2(1.06565, 1)
+texture = ExtResource("1_a2myf")
+
+[node name="title" type="Label" parent="Background2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1162.0
+offset_top = -684.0
+offset_right = -643.0
+offset_bottom = -396.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 13
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_lybql")
+theme_override_font_sizes/font_size = 200
+text = "Mario"
+metadata/_edit_use_anchors_ = true
+
+[node name="score" type="Label" parent="Background2"]
+offset_left = -246.0
+offset_top = 71.0
+offset_right = 51.0
+offset_bottom = 189.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 9
+theme_override_fonts/font = ExtResource("2_lybql")
+theme_override_font_sizes/font_size = 80
+text = "SCORE"
+script = ExtResource("3_45uv3")
+
+[node name="PauseRecord" type="Sprite2D" parent="."]
+position = Vector2(465, 633)
+texture = ExtResource("3_svfek")
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="Brick" type="Sprite2D" parent="Floor"]
+position = Vector2(76, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick2" type="Sprite2D" parent="Floor"]
+position = Vector2(228, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick3" type="Sprite2D" parent="Floor"]
+position = Vector2(380, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick4" type="Sprite2D" parent="Floor"]
+position = Vector2(532, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick5" type="Sprite2D" parent="Floor"]
+position = Vector2(684, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick6" type="Sprite2D" parent="Floor"]
+position = Vector2(836, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick7" type="Sprite2D" parent="Floor"]
+position = Vector2(988, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick8" type="Sprite2D" parent="Floor"]
+position = Vector2(1140, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick9" type="Sprite2D" parent="Floor"]
+position = Vector2(1292, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick10" type="Sprite2D" parent="Floor"]
+position = Vector2(1444, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick11" type="Sprite2D" parent="Floor"]
+position = Vector2(1596, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick12" type="Sprite2D" parent="Floor"]
+position = Vector2(1748, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="Brick13" type="Sprite2D" parent="Floor"]
+position = Vector2(1900, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_7a2fi")
+
+[node name="None1" type="Sprite2D" parent="."]
+position = Vector2(329, 797)
+scale = Vector2(2.01563, 2.01563)
+texture = ExtResource("5_6b5kl")

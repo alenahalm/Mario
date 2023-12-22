@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxj1kaq62bdd1"]
+
+[ext_resource type="Texture2D" uid="uid://d2u6e5hxhidpc" path="res://assets/background.png" id="1_7frd7"]
+[ext_resource type="Script" path="res://pause.gd" id="1_oh42e"]
+[ext_resource type="FontFile" uid="uid://di3v2lrw62x7d" path="res://assets/Font/ofont.ru_Avatar.ttf" id="2_8w0u4"]
+[ext_resource type="Texture2D" uid="uid://dak2m4aedewsy" path="res://assets/Build/decoration/pause_record.png" id="3_8uxr1"]
+[ext_resource type="Texture2D" uid="uid://ca733a4mssfvu" path="res://assets/Build/Bricks/brick.png" id="4_wce0v"]
+[ext_resource type="Texture2D" uid="uid://dcur5fsd4akvg" path="res://assets/Player/Idle/none1.png" id="5_rv6jh"]
+
+[node name="pause" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_oh42e")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(961.25, 537)
+scale = Vector2(1.06565, 1)
+texture = ExtResource("1_7frd7")
+
+[node name="Label" type="Label" parent="Background"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1162.0
+offset_top = -684.0
+offset_right = -643.0
+offset_bottom = -396.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 13
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_8w0u4")
+theme_override_font_sizes/font_size = 200
+text = "Пауза"
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseRecord" type="Sprite2D" parent="."]
+position = Vector2(465, 633)
+texture = ExtResource("3_8uxr1")
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="Brick" type="Sprite2D" parent="Floor"]
+position = Vector2(76, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick2" type="Sprite2D" parent="Floor"]
+position = Vector2(228, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick3" type="Sprite2D" parent="Floor"]
+position = Vector2(380, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick4" type="Sprite2D" parent="Floor"]
+position = Vector2(532, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick5" type="Sprite2D" parent="Floor"]
+position = Vector2(684, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick6" type="Sprite2D" parent="Floor"]
+position = Vector2(836, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick7" type="Sprite2D" parent="Floor"]
+position = Vector2(988, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick8" type="Sprite2D" parent="Floor"]
+position = Vector2(1140, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick9" type="Sprite2D" parent="Floor"]
+position = Vector2(1292, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick10" type="Sprite2D" parent="Floor"]
+position = Vector2(1444, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick11" type="Sprite2D" parent="Floor"]
+position = Vector2(1596, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick12" type="Sprite2D" parent="Floor"]
+position = Vector2(1748, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="Brick13" type="Sprite2D" parent="Floor"]
+position = Vector2(1900, 1002)
+scale = Vector2(2.05405, 2.05405)
+texture = ExtResource("4_wce0v")
+
+[node name="None1" type="Sprite2D" parent="."]
+position = Vector2(329, 797)
+scale = Vector2(2.01563, 2.01563)
+texture = ExtResource("5_rv6jh")

@@ -1,0 +1,679 @@
+[gd_scene load_steps=18 format=3 uid="uid://dx1liipw0mh83"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_emcrb"]
+[ext_resource type="Texture2D" uid="uid://d2u6e5hxhidpc" path="res://assets/background.png" id="2_cqi4q"]
+[ext_resource type="PackedScene" uid="uid://cr2ujimle2xic" path="res://Player/Player.tscn" id="2_guf35"]
+[ext_resource type="PackedScene" uid="uid://gvgjq24wqpjb" path="res://Enemy.tscn" id="3_r180n"]
+[ext_resource type="FontFile" uid="uid://di3v2lrw62x7d" path="res://assets/Font/ofont.ru_Avatar.ttf" id="5_68ify"]
+[ext_resource type="Script" path="res://Score.gd" id="6_20hva"]
+[ext_resource type="PackedScene" uid="uid://bvjhn64j4je8h" path="res://column.tscn" id="6_gmm48"]
+[ext_resource type="PackedScene" uid="uid://da6gw1iw5j3bg" path="res://simple_brick.tscn" id="7_mq5d6"]
+[ext_resource type="Script" path="res://Coins.gd" id="7_sim7g"]
+[ext_resource type="Script" path="res://Time.gd" id="8_658qn"]
+[ext_resource type="PackedScene" uid="uid://bxsjok2lsmsmf" path="res://fire_brick.tscn" id="8_s13x2"]
+[ext_resource type="PackedScene" uid="uid://dpwb2eqaaget8" path="res://World/Awards/ruby.tscn" id="9_sl4bl"]
+[ext_resource type="PackedScene" uid="uid://7meeyatg2tl3" path="res://World/Awards/fire.tscn" id="10_f1cfl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_761ki"]
+size = Vector2(5, 1044)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46nji"]
+size = Vector2(1425.5, 969)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b71j"]
+size = Vector2(728, 1045.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6rne"]
+size = Vector2(598, 1135)
+
+[node name="World" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_emcrb")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(958, 538)
+scale = Vector2(1.0615, 1)
+texture = ExtResource("2_cqi4q")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(958.75, 538)
+scale = Vector2(1.0615, 1)
+texture = ExtResource("2_cqi4q")
+offset = Vector2(1804, 0)
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(958.75, 538)
+scale = Vector2(1.0615, 1)
+texture = ExtResource("2_cqi4q")
+offset = Vector2(3608, 0)
+
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(2874.75, 538)
+scale = Vector2(1.0615, 1)
+texture = ExtResource("2_cqi4q")
+offset = Vector2(3608, 0)
+
+[node name="Background5" type="Sprite2D" parent="."]
+position = Vector2(4790.75, 538)
+scale = Vector2(1.0615, 1)
+texture = ExtResource("2_cqi4q")
+offset = Vector2(3608, 0)
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource("2_guf35")]
+position = Vector2(402, 554)
+
+[node name="Mobs" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Mobs" instance=ExtResource("3_r180n")]
+position = Vector2(1452, 759)
+
+[node name="Enemy2" parent="Mobs" instance=ExtResource("3_r180n")]
+position = Vector2(2883, 745)
+
+[node name="Enemy3" parent="Mobs" instance=ExtResource("3_r180n")]
+position = Vector2(3583, 749)
+
+[node name="Enemy4" parent="Mobs" instance=ExtResource("3_r180n")]
+position = Vector2(3971, 745)
+
+[node name="Enemy5" parent="Mobs" instance=ExtResource("3_r180n")]
+position = Vector2(5739, 322)
+
+[node name="Enemy6" parent="Mobs" instance=ExtResource("3_r180n")]
+position = Vector2(8209, 739)
+
+[node name="Enemy7" parent="Mobs" instance=ExtResource("3_r180n")]
+position = Vector2(8612, 739)
+
+[node name="Enemy8" parent="Mobs" instance=ExtResource("3_r180n")]
+position = Vector2(8017, 757)
+
+[node name="Enemy9" parent="Mobs" instance=ExtResource("3_r180n")]
+position = Vector2(8419, 753)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="UI"]
+offset_left = 218.0
+offset_top = 58.0
+offset_right = 293.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("5_68ify")
+theme_override_font_sizes/font_size = 40
+text = "SCORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("6_20hva")
+
+[node name="Coins" type="Label" parent="UI"]
+offset_left = 900.0
+offset_top = 58.0
+offset_right = 975.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("5_68ify")
+theme_override_font_sizes/font_size = 40
+text = "COINS"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("7_sim7g")
+
+[node name="Time" type="Label" parent="UI"]
+offset_left = 1610.0
+offset_top = 61.0
+offset_right = 1712.0
+offset_bottom = 122.0
+theme_override_fonts/font = ExtResource("5_68ify")
+theme_override_font_sizes/font_size = 40
+text = "TIME"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+script = ExtResource("8_658qn")
+
+[node name="Timer" type="Timer" parent="UI/Time"]
+
+[node name="Column" parent="." instance=ExtResource("6_gmm48")]
+position = Vector2(1766, 1045)
+
+[node name="Column2" parent="." instance=ExtResource("6_gmm48")]
+position = Vector2(2495, 982)
+
+[node name="Column3" parent="." instance=ExtResource("6_gmm48")]
+position = Vector2(3280, 935)
+
+[node name="Column4" parent="." instance=ExtResource("6_gmm48")]
+position = Vector2(4296, 935)
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="SimpleBrick" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(35, 1048)
+
+[node name="SimpleBrick2" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(109, 1048)
+
+[node name="SimpleBrick3" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(183, 1048)
+
+[node name="SimpleBrick4" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(257, 1048)
+
+[node name="SimpleBrick5" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(331, 1048)
+
+[node name="SimpleBrick6" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(405, 1048)
+
+[node name="SimpleBrick7" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(479, 1048)
+
+[node name="SimpleBrick8" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(553, 1048)
+
+[node name="SimpleBrick9" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(627, 1048)
+
+[node name="SimpleBrick10" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(701, 1048)
+
+[node name="SimpleBrick11" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(775, 1048)
+
+[node name="SimpleBrick12" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(849, 1048)
+
+[node name="SimpleBrick13" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(923, 1048)
+
+[node name="SimpleBrick14" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(997, 1048)
+
+[node name="SimpleBrick15" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1071, 1048)
+
+[node name="SimpleBrick16" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1145, 1048)
+
+[node name="SimpleBrick17" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1219, 1048)
+
+[node name="SimpleBrick18" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1293, 1048)
+
+[node name="SimpleBrick19" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1367, 1048)
+
+[node name="SimpleBrick20" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1441, 1048)
+
+[node name="SimpleBrick21" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1515, 1048)
+
+[node name="SimpleBrick22" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1589, 1048)
+
+[node name="SimpleBrick23" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1663, 1048)
+
+[node name="SimpleBrick24" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1737, 1048)
+
+[node name="SimpleBrick25" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1811, 1048)
+
+[node name="SimpleBrick26" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1885, 1048)
+
+[node name="SimpleBrick27" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(1959, 1048)
+
+[node name="SimpleBrick28" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2033, 1048)
+
+[node name="SimpleBrick29" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2107, 1048)
+
+[node name="SimpleBrick30" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2181, 1048)
+
+[node name="SimpleBrick31" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2255, 1048)
+
+[node name="SimpleBrick32" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2329, 1048)
+
+[node name="SimpleBrick33" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2403, 1048)
+
+[node name="SimpleBrick34" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2477, 1048)
+
+[node name="SimpleBrick35" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2551, 1048)
+
+[node name="SimpleBrick36" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2625, 1048)
+
+[node name="SimpleBrick37" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2699, 1048)
+
+[node name="SimpleBrick38" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2773, 1048)
+
+[node name="SimpleBrick39" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2847, 1048)
+
+[node name="SimpleBrick40" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2921, 1048)
+
+[node name="SimpleBrick41" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(2995, 1048)
+
+[node name="SimpleBrick42" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3069, 1048)
+
+[node name="SimpleBrick43" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3143, 1048)
+
+[node name="SimpleBrick44" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3217, 1048)
+
+[node name="SimpleBrick45" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3291, 1048)
+
+[node name="SimpleBrick46" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3365, 1048)
+
+[node name="SimpleBrick47" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3439, 1048)
+
+[node name="SimpleBrick48" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3513, 1048)
+
+[node name="SimpleBrick49" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3587, 1048)
+
+[node name="SimpleBrick50" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3661, 1048)
+
+[node name="SimpleBrick51" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3735, 1048)
+
+[node name="SimpleBrick52" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3809, 1048)
+
+[node name="SimpleBrick53" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3883, 1048)
+
+[node name="SimpleBrick54" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(3957, 1048)
+
+[node name="SimpleBrick55" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4031, 1048)
+
+[node name="SimpleBrick56" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4105, 1048)
+
+[node name="SimpleBrick57" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4179, 1048)
+
+[node name="SimpleBrick58" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4253, 1048)
+
+[node name="SimpleBrick59" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4327, 1048)
+
+[node name="SimpleBrick60" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4401, 1048)
+
+[node name="SimpleBrick61" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4475, 1048)
+
+[node name="SimpleBrick62" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4549, 1048)
+
+[node name="SimpleBrick63" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4623, 1048)
+
+[node name="SimpleBrick64" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4697, 1048)
+
+[node name="SimpleBrick65" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(4967, 1048)
+
+[node name="SimpleBrick66" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5041, 1048)
+
+[node name="SimpleBrick67" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5115, 1048)
+
+[node name="SimpleBrick68" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5189, 1048)
+
+[node name="SimpleBrick69" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5263, 1048)
+
+[node name="SimpleBrick70" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5337, 1048)
+
+[node name="SimpleBrick71" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5411, 1048)
+
+[node name="SimpleBrick72" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5485, 1048)
+
+[node name="SimpleBrick73" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5559, 1048)
+
+[node name="SimpleBrick74" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5633, 1048)
+
+[node name="SimpleBrick75" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5707, 1048)
+
+[node name="SimpleBrick76" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(5781, 1048)
+
+[node name="SimpleBrick77" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6104, 1048)
+
+[node name="SimpleBrick78" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6178, 1048)
+
+[node name="SimpleBrick79" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6252, 1048)
+
+[node name="SimpleBrick80" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6326, 1048)
+
+[node name="SimpleBrick81" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6400, 1048)
+
+[node name="SimpleBrick82" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6474, 1048)
+
+[node name="SimpleBrick83" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6548, 1048)
+
+[node name="SimpleBrick84" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6622, 1048)
+
+[node name="SimpleBrick85" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6696, 1048)
+
+[node name="SimpleBrick86" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6770, 1048)
+
+[node name="SimpleBrick87" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6844, 1048)
+
+[node name="SimpleBrick88" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6918, 1048)
+
+[node name="SimpleBrick89" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(6992, 1048)
+
+[node name="SimpleBrick90" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7066, 1048)
+
+[node name="SimpleBrick91" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7140, 1048)
+
+[node name="SimpleBrick92" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7214, 1048)
+
+[node name="SimpleBrick93" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7288, 1048)
+
+[node name="SimpleBrick94" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7362, 1048)
+
+[node name="SimpleBrick95" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7436, 1048)
+
+[node name="SimpleBrick96" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7510, 1048)
+
+[node name="SimpleBrick97" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7584, 1048)
+
+[node name="SimpleBrick98" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7658, 1048)
+
+[node name="SimpleBrick99" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7732, 1048)
+
+[node name="SimpleBrick100" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7806, 1048)
+
+[node name="SimpleBrick101" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7880, 1048)
+
+[node name="SimpleBrick102" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(7954, 1048)
+
+[node name="SimpleBrick103" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8028, 1048)
+
+[node name="SimpleBrick104" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8102, 1048)
+
+[node name="SimpleBrick105" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8176, 1048)
+
+[node name="SimpleBrick106" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8250, 1048)
+
+[node name="SimpleBrick107" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8324, 1048)
+
+[node name="SimpleBrick108" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8398, 1048)
+
+[node name="SimpleBrick109" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8472, 1048)
+
+[node name="SimpleBrick110" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8546, 1048)
+
+[node name="SimpleBrick111" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8620, 1048)
+
+[node name="SimpleBrick112" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8694, 1048)
+
+[node name="SimpleBrick113" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8768, 1048)
+
+[node name="SimpleBrick114" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8842, 1048)
+
+[node name="SimpleBrick115" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8916, 1048)
+
+[node name="SimpleBrick116" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(8990, 1048)
+
+[node name="SimpleBrick117" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9064, 1048)
+
+[node name="SimpleBrick118" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9138, 1048)
+
+[node name="SimpleBrick119" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9212, 1048)
+
+[node name="SimpleBrick120" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9286, 1048)
+
+[node name="SimpleBrick121" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9360, 1048)
+
+[node name="SimpleBrick122" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9434, 1048)
+
+[node name="SimpleBrick123" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9508, 1048)
+
+[node name="SimpleBrick124" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9582, 1048)
+
+[node name="SimpleBrick125" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9656, 1048)
+
+[node name="SimpleBrick126" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9730, 1048)
+
+[node name="SimpleBrick127" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9804, 1048)
+
+[node name="SimpleBrick128" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9878, 1048)
+
+[node name="SimpleBrick129" parent="Floor" instance=ExtResource("7_mq5d6")]
+position = Vector2(9952, 1048)
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="LeftWall" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-2, 522)
+shape = SubResource("RectangleShape2D_761ki")
+
+[node name="Ruby" parent="." instance=ExtResource("9_sl4bl")]
+position = Vector2(780, 777)
+
+[node name="FireBrick" parent="." instance=ExtResource("8_s13x2")]
+position = Vector2(781, 772)
+
+[node name="Ruby2" parent="." instance=ExtResource("9_sl4bl")]
+position = Vector2(1171, 777)
+
+[node name="FireBrick3" parent="." instance=ExtResource("8_s13x2")]
+position = Vector2(1172, 772)
+
+[node name="Ruby3" parent="." instance=ExtResource("9_sl4bl")]
+position = Vector2(1097, 505)
+
+[node name="FireBrick4" parent="." instance=ExtResource("8_s13x2")]
+position = Vector2(1098, 500)
+
+[node name="Ruby5" parent="." instance=ExtResource("9_sl4bl")]
+position = Vector2(6351, 510)
+
+[node name="FireBrick7" parent="." instance=ExtResource("8_s13x2")]
+position = Vector2(6352, 505)
+
+[node name="Fire" parent="." instance=ExtResource("10_f1cfl")]
+position = Vector2(1025, 780)
+
+[node name="FireBrick2" parent="." instance=ExtResource("8_s13x2")]
+position = Vector2(1024, 772)
+
+[node name="Ruby4" parent="." instance=ExtResource("9_sl4bl")]
+position = Vector2(7130, 777)
+
+[node name="FireBrick5" parent="." instance=ExtResource("8_s13x2")]
+position = Vector2(7131, 772)
+
+[node name="Ruby6" parent="." instance=ExtResource("9_sl4bl")]
+position = Vector2(7394, 777)
+
+[node name="FireBrick8" parent="." instance=ExtResource("8_s13x2")]
+position = Vector2(7395, 772)
+
+[node name="Ruby7" parent="." instance=ExtResource("9_sl4bl")]
+position = Vector2(7666, 777)
+
+[node name="FireBrick9" parent="." instance=ExtResource("8_s13x2")]
+position = Vector2(7667, 772)
+
+[node name="Fire2" parent="." instance=ExtResource("10_f1cfl")]
+position = Vector2(5278, 780)
+
+[node name="FireBrick6" parent="." instance=ExtResource("8_s13x2")]
+position = Vector2(5277, 772)
+
+[node name="Fire3" parent="." instance=ExtResource("10_f1cfl")]
+position = Vector2(7396, 511)
+
+[node name="FireBrick10" parent="." instance=ExtResource("8_s13x2")]
+position = Vector2(7395, 503)
+
+[node name="SimpleBrick" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(1098, 772)
+
+[node name="SimpleBrick4" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(5203, 772)
+
+[node name="SimpleBrick11" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(5351, 772)
+
+[node name="SimpleBrick15" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(6263, 772)
+
+[node name="SimpleBrick16" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(6663, 772)
+
+[node name="SimpleBrick17" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(6737, 772)
+
+[node name="SimpleBrick5" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(5436, 504)
+
+[node name="SimpleBrick6" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(5510, 504)
+
+[node name="SimpleBrick7" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(5584, 504)
+
+[node name="SimpleBrick8" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(5658, 504)
+
+[node name="SimpleBrick9" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(5732, 504)
+
+[node name="SimpleBrick10" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(5806, 504)
+
+[node name="SimpleBrick12" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(6130, 505)
+
+[node name="SimpleBrick13" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(6204, 505)
+
+[node name="SimpleBrick14" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(6278, 505)
+
+[node name="SimpleBrick3" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(1246, 772)
+
+[node name="SimpleBrick2" parent="." instance=ExtResource("7_mq5d6")]
+position = Vector2(950, 772)
+
+[node name="Constrict" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Constrict"]
+position = Vector2(8321.25, 511.5)
+shape = SubResource("RectangleShape2D_46nji")
+
+[node name="Constrict2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Constrict2"]
+position = Vector2(5361, 550.75)
+shape = SubResource("RectangleShape2D_1b71j")
+
+[node name="EndingAnimation" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndingAnimation"]
+position = Vector2(9264, 540)
+shape = SubResource("RectangleShape2D_n6rne")
+
+[connection signal="timeout" from="UI/Time/Timer" to="UI/Time" method="_on_timer_timeout"]
+[connection signal="body_exited" from="Constrict" to="." method="_on_constrict_body_exited"]
+[connection signal="body_exited" from="Constrict2" to="." method="_on_constrict_body_exited"]
+[connection signal="body_entered" from="EndingAnimation" to="." method="_on_ending_animation_body_entered"]
+[connection signal="body_exited" from="EndingAnimation" to="." method="_on_ending_animation_body_exited"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://da6gw1iw5j3bg"]
+
+[ext_resource type="Texture2D" uid="uid://ca733a4mssfvu" path="res://assets/Build/Bricks/brick.png" id="1_ofltc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5fxb"]
+size = Vector2(74, 74)
+
+[node name="SimpleBrick" type="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g5fxb")
+
+[node name="Brick" type="Sprite2D" parent="."]
+texture = ExtResource("1_ofltc")

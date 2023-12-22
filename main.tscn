@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxi8f4oqqd1wr"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_8o5vj"]
+[ext_resource type="Texture2D" uid="uid://d2u6e5hxhidpc" path="res://assets/background.png" id="2_7yagi"]
+[ext_resource type="FontFile" uid="uid://di3v2lrw62x7d" path="res://assets/Font/ofont.ru_Avatar.ttf" id="3_f5c18"]
+[ext_resource type="Texture2D" uid="uid://daiayrmjdm1ag" path="res://assets/Build/decoration/menu.png" id="4_6n5ss"]
+
+[node name="Main" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_8o5vj")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(958, 538)
+scale = Vector2(1.0615, 1)
+texture = ExtResource("2_7yagi")
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(958, 539)
+scale = Vector2(1.05681, 1.08233)
+texture = ExtResource("4_6n5ss")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1916.0
+offset_bottom = 1078.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.5
+offset_top = -304.0
+offset_right = 259.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 13
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("3_f5c18")
+theme_override_font_sizes/font_size = 200
+text = "Mario"
+
+[node name="Start" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = 105.5
+offset_right = 216.0
+offset_bottom = 214.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.301961, 0.270588, 0.258824, 0.380392)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_f5c18")
+theme_override_font_sizes/font_size = 70
+text = "Начать игру"
+flat = true
+icon_alignment = 1
+
+[node name="Quit" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = 217.5
+offset_right = 111.0
+offset_bottom = 326.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.301961, 0.270588, 0.258824, 0.380392)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_f5c18")
+theme_override_font_sizes/font_size = 70
+text = "Выход"
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxsjok2lsmsmf"]
+
+[ext_resource type="Script" path="res://fire_brick.gd" id="1_5pb1b"]
+[ext_resource type="Texture2D" uid="uid://bxi3af7lrf873" path="res://assets/Build/Bricks/question_brick.png" id="1_iwncj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvmid"]
+size = Vector2(74, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrk5m"]
+size = Vector2(70, 47)
+
+[node name="FireBrick" type="AnimatableBody2D"]
+script = ExtResource("1_5pb1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vvmid")
+
+[node name="QuestionBrick" type="Sprite2D" parent="."]
+texture = ExtResource("1_iwncj")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(0, 15.5)
+shape = SubResource("RectangleShape2D_nrk5m")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
