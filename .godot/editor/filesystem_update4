@@ -1,0 +1,11 @@
+res://main.tscn
+res://world.tscn
+res://Player/Player.tscn
+res://Enemy.tscn
+res://game_over.tscn
+res://fire_brick.tscn
+res://simple_brick.tscn
+res://column.tscn
+res://World/Awards/ruby.tscn
+res://World/Awards/fire.tscn
+res://pause.tscn
